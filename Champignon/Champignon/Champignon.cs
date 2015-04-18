@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms.VisualStyles;
+
+
 
 namespace Champignon
 {
-    enum Roles
+    //Character professions
+    internal enum Roles
     {
         Assassin,
         Fighter,
@@ -18,102 +15,48 @@ namespace Champignon
         Marksman
     };
 
-    class Champignon
+    internal class Champignon
     {
-        
 
-        private Roles rol;
-        private string naam;
+        //fields
+        private readonly Roles rol;
         private double health;
-        private double movementSpeed;
-        private double attackDamage;
-        private static double classicMode;
-        private int _level;
-
-        public string Naam
+        //Constructor
+        public Champignon(string naam, double health, double attackDamage, Roles rol, int level)
         {
-            get
-            {
-                return naam;
-            }
+            
+            Naam = naam;
+            this.health = health;
+            AttackDamage = attackDamage;
+            this.rol = rol;
+            MovementSpeed = 150;
+            Level = level;
         }
+
+        //Properties
+        public string Naam { get; private set; }
 
         public double Health
         {
-            get
-            {
-                return health;
-            }
-            set
-            {
-                health = value;
-            }
+            get { return health; }
+            set { health = Math.Round(value, 2); }
         }
 
-        public double MovementSpeed
-        {
-            get
-            {
-                return movementSpeed;
-            }
-            set
-            {
-                movementSpeed = value;
-            }
-        }
-
-        public double AttackDamage
-        {
-            get
-            {
-                return attackDamage;
-            }
-
-            set { attackDamage = value; }
-        }
-
-        public static double ClassicMode
-        {
-            get
-            {
-                return classicMode;
-            }
-            set { classicMode = value; }
-        }
+        public double MovementSpeed { get; set; }
+        public double AttackDamage { get; set; }
+        public static double ClassicMode { get; set; }
+        public int Level { get; set; }
 
 
-        public int Level
-        {
-            get
-            {
-                return _level;
-            }
-            set
-            {
-                _level = value;
-            }
-        }
-
-
-        public Champignon(string naam, double health, double attackDamage, Roles rol, int level)
-        {
-            this.naam = naam;
-            this.health = health;
-            this.attackDamage = attackDamage;
-            this.rol = rol;
-            MovementSpeed = 150;
-            this._level = level;
-        }
-
+        //Change level method
         public void ChangeLevel(int newLevel)
         {
-            this._level = newLevel;
-            int vorigLevel = 1;
+            Level = newLevel;
+            var vorigLevel = 1;
             if (newLevel > vorigLevel)
             {
-
-                attackDamage += 3.1;
-                movementSpeed = movementSpeed * 1.1;
+                AttackDamage += 3.1;
+                MovementSpeed = MovementSpeed*1.1;
 
                 if (rol == Roles.Fighter || rol == Roles.Assassin)
                 {
@@ -125,15 +68,13 @@ namespace Champignon
                     health += 55;
                 }
 
-                vorigLevel = newLevel;
-
+                Level = newLevel;
             }
 
             if (newLevel <= vorigLevel)
             {
-
-                attackDamage -= 3.1;
-                movementSpeed = movementSpeed / 1.1;
+                AttackDamage -= 3.1;
+                MovementSpeed = MovementSpeed/1.1;
 
                 if (rol == Roles.Assassin || rol == Roles.Fighter)
                 {
@@ -146,13 +87,11 @@ namespace Champignon
             }
         }
 
-  
+        public void ReceiveDamage(double AttackDamage)
+        {
+            Health = Health - AttackDamage;
+        }
 
-
-
-
-
-
-
+    
     }
 }

@@ -38,10 +38,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblNameRight = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLeftAttack = new System.Windows.Forms.Button();
             this.btnRightAttack = new System.Windows.Forms.Button();
+            this.btnLeftLevelUp = new System.Windows.Forms.Button();
+            this.lblLeftHealth = new System.Windows.Forms.Label();
+            this.lblRightHealth = new System.Windows.Forms.Label();
+            this.btnRightLevelUp = new System.Windows.Forms.Button();
+            this.lblsuperSaiyan = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -85,15 +90,21 @@
             // healthBarLeft
             // 
             this.healthBarLeft.Location = new System.Drawing.Point(15, 73);
+            this.healthBarLeft.MarqueeAnimationSpeed = 500;
+            this.healthBarLeft.Maximum = 200;
             this.healthBarLeft.Name = "healthBarLeft";
             this.healthBarLeft.Size = new System.Drawing.Size(161, 23);
+            this.healthBarLeft.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.healthBarLeft.TabIndex = 5;
             // 
             // healthBarRight
             // 
             this.healthBarRight.Location = new System.Drawing.Point(810, 73);
+            this.healthBarRight.MarqueeAnimationSpeed = 500;
+            this.healthBarRight.Maximum = 200;
             this.healthBarRight.Name = "healthBarRight";
             this.healthBarRight.Size = new System.Drawing.Size(161, 23);
+            this.healthBarRight.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.healthBarRight.TabIndex = 10;
             // 
             // lblLevelRight
@@ -132,26 +143,6 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Name:";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Champignon.Properties.Resources.Annex___Flynn__Errol__Adventures_of_Robin_Hood__The__02;
-            this.pictureBox2.Location = new System.Drawing.Point(810, 102);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(164, 196);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Champignon.Properties.Resources._219596_large;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 102);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(164, 196);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnLeftAttack
             // 
             this.btnLeftAttack.Location = new System.Drawing.Point(15, 304);
@@ -172,11 +163,86 @@
             this.btnRightAttack.UseVisualStyleBackColor = true;
             this.btnRightAttack.Click += new System.EventHandler(this.btnRightAttack_Click);
             // 
+            // btnLeftLevelUp
+            // 
+            this.btnLeftLevelUp.Location = new System.Drawing.Point(15, 354);
+            this.btnLeftLevelUp.Name = "btnLeftLevelUp";
+            this.btnLeftLevelUp.Size = new System.Drawing.Size(164, 45);
+            this.btnLeftLevelUp.TabIndex = 15;
+            this.btnLeftLevelUp.Text = "Level up!";
+            this.btnLeftLevelUp.UseVisualStyleBackColor = true;
+            this.btnLeftLevelUp.Click += new System.EventHandler(this.btnLeftLevelUp_Click);
+            // 
+            // lblLeftHealth
+            // 
+            this.lblLeftHealth.AutoSize = true;
+            this.lblLeftHealth.BackColor = System.Drawing.Color.White;
+            this.lblLeftHealth.Location = new System.Drawing.Point(70, 76);
+            this.lblLeftHealth.Name = "lblLeftHealth";
+            this.lblLeftHealth.Size = new System.Drawing.Size(46, 17);
+            this.lblLeftHealth.TabIndex = 16;
+            this.lblLeftHealth.Text = "label2";
+            // 
+            // lblRightHealth
+            // 
+            this.lblRightHealth.AutoSize = true;
+            this.lblRightHealth.Location = new System.Drawing.Point(869, 76);
+            this.lblRightHealth.Name = "lblRightHealth";
+            this.lblRightHealth.Size = new System.Drawing.Size(46, 17);
+            this.lblRightHealth.TabIndex = 17;
+            this.lblRightHealth.Text = "label2";
+            // 
+            // btnRightLevelUp
+            // 
+            this.btnRightLevelUp.Location = new System.Drawing.Point(810, 354);
+            this.btnRightLevelUp.Name = "btnRightLevelUp";
+            this.btnRightLevelUp.Size = new System.Drawing.Size(164, 45);
+            this.btnRightLevelUp.TabIndex = 18;
+            this.btnRightLevelUp.Text = "Level up!";
+            this.btnRightLevelUp.UseVisualStyleBackColor = true;
+            this.btnRightLevelUp.Click += new System.EventHandler(this.btnRightLevelUp_Click);
+            // 
+            // lblsuperSaiyan
+            // 
+            this.lblsuperSaiyan.AutoSize = true;
+            this.lblsuperSaiyan.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsuperSaiyan.ForeColor = System.Drawing.Color.Gold;
+            this.lblsuperSaiyan.Location = new System.Drawing.Point(229, 434);
+            this.lblsuperSaiyan.Name = "lblsuperSaiyan";
+            this.lblsuperSaiyan.Size = new System.Drawing.Size(0, 58);
+            this.lblsuperSaiyan.TabIndex = 19;
+            this.lblsuperSaiyan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Champignon.Properties.Resources.Annex___Flynn__Errol__Adventures_of_Robin_Hood__The__02;
+            this.pictureBox2.Location = new System.Drawing.Point(810, 102);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(164, 196);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Champignon.Properties.Resources._219596_large;
+            this.pictureBox1.Location = new System.Drawing.Point(15, 102);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(164, 196);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(986, 622);
+            this.Controls.Add(this.lblsuperSaiyan);
+            this.Controls.Add(this.btnRightLevelUp);
+            this.Controls.Add(this.lblRightHealth);
+            this.Controls.Add(this.lblLeftHealth);
+            this.Controls.Add(this.btnLeftLevelUp);
             this.Controls.Add(this.btnRightAttack);
             this.Controls.Add(this.btnLeftAttack);
             this.Controls.Add(this.pictureBox2);
@@ -216,6 +282,11 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnLeftAttack;
         private System.Windows.Forms.Button btnRightAttack;
+        private System.Windows.Forms.Button btnLeftLevelUp;
+        public System.Windows.Forms.Label lblLeftHealth;
+        private System.Windows.Forms.Label lblRightHealth;
+        private System.Windows.Forms.Button btnRightLevelUp;
+        private System.Windows.Forms.Label lblsuperSaiyan;
     }
 }
 

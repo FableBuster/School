@@ -73,10 +73,40 @@ namespace Champignon.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _219596_large___superSaiyan {
+            get {
+                object obj = ResourceManager.GetObject("219596_large---superSaiyan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Annex___Flynn__Errol__Adventures_of_Robin_Hood__The__02 {
             get {
                 object obj = ResourceManager.GetObject("Annex - Flynn, Errol (Adventures of Robin Hood, The)_02", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Annex___Flynn__Errol__Adventures_of_Robin_Hood__The__02_superSaiyan {
+            get {
+                object obj = ResourceManager.GetObject("Annex---Flynn,-Errol-(Adventures-of-Robin-Hood,-The)_02-superSaiyan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] rocky1 {
+            get {
+                object obj = ResourceManager.GetObject("rocky1", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }
