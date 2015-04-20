@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Configuration;
 using System.IO;
+using System.Linq;
 using System.Media;
 using System.Reflection;
 using System.Resources;
@@ -42,7 +44,7 @@ namespace Champignon
             BackColor = Color.DarkSlateGray;
 
             //Initializing background theme
-            mainTheme.URL = "rocky.mp3";
+            mainTheme.URL = ("rocky.mp3");
             mainTheme.controls.play();
             
 
